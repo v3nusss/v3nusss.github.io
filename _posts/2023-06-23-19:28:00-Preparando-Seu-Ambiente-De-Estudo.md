@@ -36,7 +36,7 @@ Primeiramente, devemos acessar a página do Kali Linux. Em seguida, clique na op
 
 [Kali Linux](https://www.kali.org/)
 
-<img src="/assets/img/vm.png">
+<img src="/assets/img/vm .png">
 
 # Instalando O Kali Linux No Oracle VM
 
