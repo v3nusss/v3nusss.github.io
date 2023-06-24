@@ -1,6 +1,6 @@
 ---
 title: Isolando Sua Rede
-author: v3nusss
+author: 
 date: 2023-06-23 20:42:00 -0300
 categories: [Blogging]
 tags: [blog]
