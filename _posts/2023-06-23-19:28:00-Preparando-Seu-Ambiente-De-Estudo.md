@@ -1,6 +1,6 @@
 ---
 title: Preparando Seu Ambiente De Estudo
-author: v3nusss
+author:
 date: 2023-06-23 19:28:00 -0300
 categories: [Blogging]
 tags: [blog]
