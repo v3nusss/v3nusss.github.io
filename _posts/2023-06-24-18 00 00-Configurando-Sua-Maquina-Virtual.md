@@ -17,3 +17,5 @@ Após clicar com o botão direito na máquina virtual, selecione "Configuraçõe
 <img src="/assets/img/rede.png">
 
 Na seção de rede, clique na opção "Conectado a:" e selecione "Placa em Modo Bridge". Em seguida, clique em "Avançado" e altere a opção de "Recusar" para "Permitir Tudo".
+
+<img src="/assets/img/redeconfigurada.png"
