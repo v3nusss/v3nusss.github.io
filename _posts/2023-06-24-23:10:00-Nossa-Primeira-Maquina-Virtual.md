@@ -6,6 +6,10 @@ categories: [Blogging]
 tags: [blog]
 ---
 
+# Maquina Em Questão
+
+O alvo selecionado para este post é a máquina "HF2019-Linux". Para fazer o download, você pode acessar o link fornecido [aqui](https://www.vulnhub.com/entry/hacker-fest-2019,378/). Após o download, você pode importar a máquina virtual clicando duas vezes no arquivo baixado. Certifique-se de configurar a rede no modo bridge para garantir a conectividade adequada.
+
 # Processo de identificação do endereço IP do alvo.
 
 Vamos abrir o nosso terminal e executar o comando "sudo netdiscover". Em seguida, o terminal começará a testar diferentes tipos de endereços IP que desejamos. Procure por uma entrada com o "MAC Vendor / Hostname" da "PCS Systemtechnik GmbH" (lembre-se de que a senha de root padrão é "kali").
