@@ -1,9 +1,6 @@
-# Maquina Virtual 2 #VM02
-
-## title: Maquina Virtual 2 #VM02
+title: Maquina Virtual 2 #VM02
 author:
 date: 2023-06-26 18:34:00 -0300
-
 categories: [Blogging]
 tags: [blog]
 
@@ -29,13 +26,13 @@ Acessando nosso alvo em nosso navegador vamos nos automaticamente ser redirecion
 80/tcp open http Apache Tomcat/Coyote JSP engine 1.1
 ```
 
-![Untitled](Maquina%20Virtual%202%20#VM02%20e63a583a646e402097867c8af78ec52c/Untitled.png)
+<img src="https://raw.githubusercontent.com/v3nusss/v3nusss.github.io/main/assets/img/Maquina%20Virtual%202%20%23VM02%20e63a583a646e402097867c8af78ec52c/Untitled.png">
 
 # # Preparando o Nosso Exploit
 
 Na descrição da máquina é informado que devemos explorar a vulnerabilidade [Struts S2](https://www.devmedia.com.br/introducao-ao-struts-2/28127)-052, para isso devemos abrir o nosso terminal e digitar “msfconsole” apos isso devemos digitar “search Struts2 rest xstream”, logo apos devemos digitar “use 0”
 
-![Untitled](Maquina%20Virtual%202%20#VM02%20e63a583a646e402097867c8af78ec52c/Untitled%201.png)
+<img src="https://raw.githubusercontent.com/v3nusss/v3nusss.github.io/main/assets/img/Maquina%20Virtual%202%20%23VM02%20e63a583a646e402097867c8af78ec52c/Untitled 1.png">
 
 # # Configurando e Executando Nosso Exploit
 
@@ -49,4 +46,4 @@ Para obter acesso às configurações necessárias em nosso exploit, devemos exe
 
 Após configurar o exploit, você pode executá-lo utilizando os comandos "run" ou "exploit". Certifique-se de que você alterou o payload para "cmd/unix/reverse_netcat" usando o comando "set payload cmd/unix/reverse_netcat". Após executar o exploit, você pode digitar "id" para verificar se obteve acesso como root no alvo
 
-![Untitled](Maquina%20Virtual%202%20#VM02%20e63a583a646e402097867c8af78ec52c/Untitled%202.png)
+<img src="https://raw.githubusercontent.com/v3nusss/v3nusss.github.io/main/assets/img/Maquina%20Virtual%202%20%23VM02%20e63a583a646e402097867c8af78ec52c/Untitled 2.png">
